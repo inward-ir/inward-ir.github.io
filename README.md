@@ -15,20 +15,18 @@ inward.ir
 - [Database Migrations](https://github.com/golang-migrate/migrate)
 - [SQL Compile](https://github.com/kyleconroy/sqlc)
 
-## Web Tools Reguirements
-
-- [Vue Language Features (Volar)](https://marketplace.visualstudio.com/items?itemName=johnsoncodehk.volar)
-- [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
-- [Debugger for Firefox](https://marketplace.visualstudio.com/items?itemName=firefox-devtools.vscode-firefox-debug)
-- [Vue.js devtools Firefox](https://addons.mozilla.org/en-US/firefox/addon/vue-js-devtools/)
-
 --------------------------------------------------------------------------------
+
+## Servers
+
+- **gRPC Proxy**  : 0.0.0.0:10000
+- **Web Server**  : 0.0.0.0:80
 
 ## Services
 
 - **application** : 0.0.0.0:50050
-- **gRPC proxy**  : 0.0.0.0:10000
-- **web-app**     : 127.0.0.1:8000
+- **web**         : 0.0.0.0:3000
+- **mobile**      : 0.0.0.0:8000
 
 --------------------------------------------------------------------------------
 
