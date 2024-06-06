@@ -3,7 +3,7 @@ Responses Map
 
 | SERVICE                      | CODE            | ERROR                  |
 |------------------------------|-----------------|------------------------|
-| News:Article                 |                 |                        |
+| Document:Article             |                 |                        |
 |                              | InvalidArgument | IDENTITY;EMPTY         |
 |                              | InvalidArgument | IDENTITY;INVALID       |
 |                              | NotFound        | ARTICLE                |
