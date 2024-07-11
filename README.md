@@ -5,9 +5,6 @@ inward.ir
 
 ## Application Tools Reguirements
 
-- Go 1.22
-- PostgreSQL 16
-
 - [Protobuf Compiler](https://github.com/protocolbuffers/protobuf)
 - [Protobuf Plugin Go Generator](google.golang.org/protobuf/cmd/protoc-gen-go)
 - [Protobuf gRPC Go Generator](google.golang.org/grpc/cmd/protoc-gen-go-grpc)
@@ -17,16 +14,18 @@ inward.ir
 
 --------------------------------------------------------------------------------
 
-## Servers
+## Gateways
 
-- **gRPC Proxy**  : 0.0.0.0:10000
-- **Web Server**  : 0.0.0.0:80
+- **gRPC Proxy**     : 0.0.0.0:10000
+- **Web Server**     : 0.0.0.0:8080
 
 ## Services
 
-- **application**   : 0.0.0.0:50050
-- **administrator** : 0.0.0.0:4000
-- **web**           : 0.0.0.0:8000
+- **application**    : 0.0.0.0:50050
+- **web**            : 0.0.0.0:8000
+- **resources**      : 0.0.0.0:4000
+- **media**          : 0.0.0.0:4500
+- **administration** : 0.0.0.0:32000
 
 --------------------------------------------------------------------------------
 

@@ -1,6 +1,8 @@
 Responses Map
 =============
 
+## APPLICATION
+
 | SERVICE                      | CODE            | ERROR                  |
 |------------------------------|-----------------|------------------------|
 | Document:Article             |                 |                        |
@@ -55,3 +57,44 @@ Responses Map
 |                              | NotFound        | AUTHOR                 |
 |                              | Internal        | AUTHOR                 |
 |------------------------------|-----------------|------------------------|
+
+
+
+
+
+## ADMINISTRATION
+
+| SERVICE                      | CODE             | ERROR                  |
+|------------------------------|------------------|------------------------|
+| CatalogExplore               |                  |                        |
+|                              | Internal         | CATALOG                |
+|------------------------------|------------------|------------------------|
+| Topics                       |                  |                        |
+|                              | Internal         | TOPICS                 |
+|------------------------------|------------------|------------------------|
+| Publishers                   |                  |                        |
+|                              | Internal         | PUBLISHERS             |
+|------------------------------|------------------|------------------------|
+| Authenticate                 |                  |                        |
+|                              | InvalidArgument  | EMAIL;EMPTY            |
+|                              | InvalidArgument  | EMAIL;INVALID          |
+|                              | InvalidArgument  | PASSWORD;EMPTY         |
+|                              | InvalidArgument  | PASSWORD;INVALID       |
+|                              | Internal         | AUTHENTICATE           |
+|                              | Unauthenticated  | USER_CRITERIA          |
+|                              | PermissionDenied | DISABLED               |
+|------------------------------|------------------|------------------------|
+
+### ADMINISTRATION INTERCEPTOR
+
+| INTERCEPTOR                  | CODE             | ERROR                         |
+|------------------------------|------------------|-------------------------------|
+| Authorization                |                  |                               |
+|                              | Unauthenticated  | INTRC/AUTHZ;METADATA;EMPTY    |
+|                              | Unauthenticated  | INTRC/AUTHZ;TOKEN;EMPTY       |
+|                              | PermissionDenied | INTRC/AUTHZ;TOKEN;INVALID     |
+|                              | PermissionDenied | INTRC/AUTHZ;ROLE;INVALID      |
+|                              | PermissionDenied | INTRC/AUTHZ;ENDPOINT;INVALID  |
+|                              | NotFound         | INTRC/AUTHZ;ENDPOINT          |
+|                              | PermissionDenied | INTRC/AUTHZ;ROLE;NOACCESS     |
+|------------------------------|------------------|-------------------------------|
