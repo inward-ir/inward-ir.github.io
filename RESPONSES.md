@@ -1,7 +1,7 @@
 Responses Map
 =============
 
-## APPLICATION
+# APPLICATION
 
 | SERVICE                      | CODE            | ERROR                  |
 |------------------------------|-----------------|------------------------|
@@ -62,39 +62,51 @@ Responses Map
 
 
 
-## ADMINISTRATION
+----------------------------------------------------------------------------------------------------
 
-| SERVICE                      | CODE             | ERROR                  |
-|------------------------------|------------------|------------------------|
-| CatalogExplore               |                  |                        |
-|                              | Internal         | CATALOG                |
-|------------------------------|------------------|------------------------|
-| Topics                       |                  |                        |
-|                              | Internal         | TOPICS                 |
-|------------------------------|------------------|------------------------|
-| Publishers                   |                  |                        |
-|                              | Internal         | PUBLISHERS             |
-|------------------------------|------------------|------------------------|
-| Authenticate                 |                  |                        |
-|                              | InvalidArgument  | EMAIL;EMPTY            |
-|                              | InvalidArgument  | EMAIL;INVALID          |
-|                              | InvalidArgument  | PASSWORD;EMPTY         |
-|                              | InvalidArgument  | PASSWORD;INVALID       |
-|                              | Internal         | AUTHENTICATE           |
-|                              | Unauthenticated  | USER_CRITERIA          |
-|                              | PermissionDenied | DISABLED               |
-|------------------------------|------------------|------------------------|
+# ADMINISTRATION
 
-### ADMINISTRATION INTERCEPTOR
+| CODE             | ERROR                  |
+|------------------|------------------------|
+| Unavailable      | connection error: ...  |
+
+
+
+## SERVICES
+
+| SERVICE                      | CODE             | ERROR                         |
+|------------------------------|------------------|-------------------------------|
+| CatalogExplore               |                  |                               |
+|                              | Internal         | CATALOG                       |
+|------------------------------|------------------|-------------------------------|
+| Topics                       |                  |                               |
+|                              | Internal         | TOPICS                        |
+|------------------------------|------------------|-------------------------------|
+| Publishers                   |                  |                               |
+|                              | Internal         | PUBLISHERS                    |
+|------------------------------|------------------|-------------------------------|
+| Authenticate                 |                  |                               |
+|                              | InvalidArgument  | EMAIL;EMPTY                   |
+|                              | InvalidArgument  | EMAIL;INVALID                 |
+|                              | InvalidArgument  | PASSWORD;EMPTY                |
+|                              | InvalidArgument  | PASSWORD;INVALID              |
+|                              | Internal         | AUTHENTICATE                  |
+|                              | Unauthenticated  | CRITERIA                      |
+|                              | PermissionDenied | DISABLED                      |
+|------------------------------|------------------|-------------------------------|
+
+
+
+## INTERCEPTORS
 
 | INTERCEPTOR                  | CODE             | ERROR                         |
 |------------------------------|------------------|-------------------------------|
 | Authorization                |                  |                               |
 |                              | Unauthenticated  | INTRC/AUTHZ;METADATA;EMPTY    |
 |                              | Unauthenticated  | INTRC/AUTHZ;TOKEN;EMPTY       |
-|                              | PermissionDenied | INTRC/AUTHZ;TOKEN;INVALID     |
-|                              | PermissionDenied | INTRC/AUTHZ;ROLE;INVALID      |
-|                              | PermissionDenied | INTRC/AUTHZ;ENDPOINT;INVALID  |
+|                              | Unauthenticated  | INTRC/AUTHZ;TOKEN             |
 |                              | NotFound         | INTRC/AUTHZ;ENDPOINT          |
-|                              | PermissionDenied | INTRC/AUTHZ;ROLE;NOACCESS     |
+|                              | PermissionDenied | INTRC/AUTHZ;ENDPOINT          |
+|                              | NotFound         | INTRC/AUTHZ;ROLE              |
+|                              | PermissionDenied | INTRC/AUTHZ;ROLE              |
 |------------------------------|------------------|-------------------------------|
