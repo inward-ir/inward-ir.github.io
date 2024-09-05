@@ -69,31 +69,43 @@ Responses Map
 | CODE             | ERROR                  |
 |------------------|------------------------|
 | Unavailable      | connection error: ...  |
+|------------------|------------------------|
 
 
 
 ## SERVICES
 
-| SERVICE                      | CODE             | ERROR                         |
-|------------------------------|------------------|-------------------------------|
-| CatalogExplore               |                  |                               |
-|                              | Internal         | CATALOG                       |
-|------------------------------|------------------|-------------------------------|
-| Topics                       |                  |                               |
-|                              | Internal         | TOPICS                        |
-|------------------------------|------------------|-------------------------------|
-| Publishers                   |                  |                               |
-|                              | Internal         | PUBLISHERS                    |
-|------------------------------|------------------|-------------------------------|
-| Authenticate                 |                  |                               |
-|                              | InvalidArgument  | EMAIL;EMPTY                   |
-|                              | InvalidArgument  | EMAIL;INVALID                 |
-|                              | InvalidArgument  | PASSWORD;EMPTY                |
-|                              | InvalidArgument  | PASSWORD;INVALID              |
-|                              | Internal         | AUTHENTICATE                  |
-|                              | Unauthenticated  | CRITERIA                      |
-|                              | PermissionDenied | DISABLED                      |
-|------------------------------|------------------|-------------------------------|
+| SERVICE                      | CODE               | ERROR                         |
+|------------------------------|--------------------|-------------------------------|
+| CatalogExplore               |                    |                               |
+|                              | Internal           | CATALOG                       |
+|------------------------------|--------------------|-------------------------------|
+| Topics                       |                    |                               |
+|                              | Internal           | TOPICS                        |
+|------------------------------|--------------------|-------------------------------|
+| Publishers                   |                    |                               |
+|                              | Internal           | PUBLISHERS                    |
+|------------------------------|--------------------|-------------------------------|
+| Authenticate                 |                    |                               |
+|                              | InvalidArgument    | EMAIL;EMPTY                   |
+|                              | InvalidArgument    | EMAIL;INVALID                 |
+|                              | InvalidArgument    | PASSWORD;EMPTY                |
+|                              | InvalidArgument    | PASSWORD;INVALID              |
+|                              | Internal           | AUTHENTICATE                  |
+|                              | Unauthenticated    | CRITERIA                      |
+|                              | PermissionDenied   | DISABLED                      |
+|------------------------------|--------------------|-------------------------------|
+| DocumentArticleAdd           |                    |                               |
+|                              | Internal           | IDENTITY                      |
+|                              | Internal           | DOCUMENT                      |
+|                              | FailedPrecondition | AUTHOR_ID                     |
+|                              | AlreadyExists      | EXTRACT                       |
+|------------------------------|--------------------|-------------------------------|
+| SetDocumentState             |                    |                               |
+|                              | InvalidArgument    | ALIAS;INVALID                 |
+|                              | InvalidArgument    | STATE;UNSPECIFIED             |
+|                              | Internal           | STATE                         |
+|------------------------------|--------------------|-------------------------------|
 
 
 
@@ -109,4 +121,5 @@ Responses Map
 |                              | PermissionDenied | INTRC/AUTHZ;ENDPOINT          |
 |                              | NotFound         | INTRC/AUTHZ;ROLE              |
 |                              | PermissionDenied | INTRC/AUTHZ;ROLE              |
+|                              | NotFound         | INTRC/AUTHZ;ID                |
 |------------------------------|------------------|-------------------------------|
