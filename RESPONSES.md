@@ -77,7 +77,9 @@ Responses Map
 
 | SERVICE                      | CODE               | ERROR                         |
 |------------------------------|--------------------|-------------------------------|
-| CatalogExplore               |                    |                               |
+| ExploreCatalog               |                    |                               |
+|                              | InvalidArgument    | DATE;EMPTY                    |
+|                              | InvalidArgument    | DATE;EXCEED                   |
 |                              | Internal           | CATALOG                       |
 |------------------------------|--------------------|-------------------------------|
 | Topics                       |                    |                               |
@@ -85,6 +87,9 @@ Responses Map
 |------------------------------|--------------------|-------------------------------|
 | Publishers                   |                    |                               |
 |                              | Internal           | PUBLISHERS                    |
+|------------------------------|--------------------|-------------------------------|
+| Authors                      |                    |                               |
+|                              | Internal           | AUTHORS                       |
 |------------------------------|--------------------|-------------------------------|
 | Authenticate                 |                    |                               |
 |                              | InvalidArgument    | EMAIL;EMPTY                   |
@@ -98,6 +103,7 @@ Responses Map
 | DocumentArticleAdd           |                    |                               |
 |                              | Internal           | IDENTITY                      |
 |                              | Internal           | DOCUMENT                      |
+|                              | AlreadyExists      | DOCUMENT                      |
 |                              | FailedPrecondition | AUTHOR_ID                     |
 |                              | AlreadyExists      | EXTRACT                       |
 |------------------------------|--------------------|-------------------------------|
@@ -105,6 +111,27 @@ Responses Map
 |                              | InvalidArgument    | ALIAS;INVALID                 |
 |                              | InvalidArgument    | STATE;UNSPECIFIED             |
 |                              | Internal           | STATE                         |
+|------------------------------|--------------------|-------------------------------|
+| DocumentReview               |                    |                               |
+|                              | Internal           | DOCUMENT                      |
+|                              | Internal           | CONTENT                       |
+|                              | InvalidArgument    | ID                            |
+|------------------------------|--------------------|-------------------------------|
+| PublisherAdd                 |                    |                               |
+|                              | Internal           | PUBLISHER                     |
+|                              | InvalidArgument    | NAME;EMPTY                    |
+|                              | InvalidArgument    | WEBSITE;EMPTY                 |
+|                              | InvalidArgument    | WEBSITE;INVALID               |
+|                              | InvalidArgument    | LOGO;EMPTY                    |
+|                              | AlreadyExists      | PUBLISHER                     |
+|------------------------------|--------------------|-------------------------------|
+| AuthorAdd                    |                    |                               |
+|                              | Internal           | AUTHOR                        |
+|                              | InvalidArgument    | ROLE;UNSPECIFIED              |
+|                              | InvalidArgument    | NAME;EMPTY                    |
+|                              | InvalidArgument    | EMAIL;EMPTY                   |
+|                              | InvalidArgument    | PASSWORD;EMPTY                |
+|                              | AlreadyExists      | AUTHOR                        |
 |------------------------------|--------------------|-------------------------------|
 
 
