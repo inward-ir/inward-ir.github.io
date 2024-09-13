@@ -106,11 +106,15 @@ Responses Map
 |                              | AlreadyExists      | DOCUMENT                      |
 |                              | FailedPrecondition | AUTHOR_ID                     |
 |                              | AlreadyExists      | EXTRACT                       |
+|                              | Internal           | MEMORY                        |
 |------------------------------|--------------------|-------------------------------|
 | SetDocumentState             |                    |                               |
-|                              | InvalidArgument    | ALIAS;INVALID                 |
+|                              | InvalidArgument    | ID;EMPTY                      |
 |                              | InvalidArgument    | STATE;UNSPECIFIED             |
 |                              | Internal           | STATE                         |
+|                              | Internal           | DOCUMENT                      |
+|                              | Internal           | MEMORY/CATALOG                |
+|                              | Internal           | MEMORY/DOCUMENT               |
 |------------------------------|--------------------|-------------------------------|
 | DocumentReview               |                    |                               |
 |                              | Internal           | DOCUMENT                      |

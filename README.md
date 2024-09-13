@@ -48,7 +48,7 @@ inward.ir
 /inward.ir/application    $ make run
 /inward.ir/web            $ make run
 /inward.ir/web-resources  $ run.sh
-/inward.ir/administration $ wails dev
+/inward.ir/administration $ wails dev | VSCode:Ctrl+F9
 
 
 ### Bundle web interface file for "web" project:
@@ -85,3 +85,7 @@ Use output to add a new "author"'s passowrd to database.
 - Create groups
 
 /inward.ir/constitution/bootstrap $ source minio.sh
+
+### Create MinIO user:
+
+/inward.ir/constitution $ make minio_user name=<name> passwd=<password>
