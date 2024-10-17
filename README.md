@@ -16,39 +16,51 @@ inward.ir
 
 ## Gateways
 
-- **gRPC Proxy**     : 0.0.0.0:10000
-- **Web Server**     : 0.0.0.0:8080
+- **gRPC Web Proxy** = 127.0.0.1:10000
+- **Web Server**     = 127.0.0.1:8000
 
 ## Services
 
-- **application**    : 0.0.0.0:50050
-- **administration** : 0.0.0.0:32000
-- **web**            : 0.0.0.0:8000
-- **resources**      : 0.0.0.0:40000
+- **application**    = :50050
+- **administration** = :32000
+- **web**            = :18000
+- **resources**      = :40000
 
 --------------------------------------------------------------------------------
 
 ## Gateways
 
-- application gRPC API (application)    : app.inward.ir
-- application gRPC Web API (gRPC proxy) : appweb.inward.ir
+- application gRPC API     : app.inward.ir    -> **application**
+- application gRPC Web API : appweb.inward.ir -> **gRPC Web Proxy**
 
 ## Subdomains
 
-- Media : media.inward.ir
+- Media : media.inward.ir -> 0.0.0.0:9000 (minio)
 
 --------------------------------------------------------------------------------
 
-## Development Lifecycle
-
-
-### Run Services:
+## Run Services:
 
 /inward.ir/constitution   $ make servers_up
 /inward.ir/application    $ make run
 /inward.ir/web            $ make run
 /inward.ir/web-resources  $ run.sh
 /inward.ir/administration $ wails dev | VSCode:Ctrl+F9
+
+--------------------------------------------------------------------------------
+
+## Development Lifecycle
+
+
+### Setup Database
+
+/inward.ir/constitution $ make db_create
+
+Execute:
+/inward.ir/constitution/database/schemas/000001_initialize.up.sql
+/inward.ir/constitution/database/schemas/000002_data.up.sql
+OR
+/inward.ir/constitution $ make migrate_up
 
 
 ### Bundle web interface file for "web" project:
@@ -85,6 +97,7 @@ Use output to add a new "author"'s passowrd to database.
 - Create groups
 
 /inward.ir/constitution/bootstrap $ source minio.sh
+
 
 ### Create MinIO user:
 
