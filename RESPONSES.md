@@ -77,10 +77,10 @@ Responses Map
 
 | SERVICE                      | CODE               | ERROR                         |
 |------------------------------|--------------------|-------------------------------|
-| ExploreCatalog               |                    |                               |
+| DocumentExplore              |                    |                               |
 |                              | InvalidArgument    | DATE;EMPTY                    |
 |                              | InvalidArgument    | DATE;EXCEED                   |
-|                              | Internal           | CATALOG                       |
+|                              | Internal           | EXPLORE                       |
 |------------------------------|--------------------|-------------------------------|
 | Topics                       |                    |                               |
 |                              | Internal           | TOPICS                        |
@@ -117,9 +117,13 @@ Responses Map
 |                              | Internal           | MEMORY/DOCUMENT               |
 |------------------------------|--------------------|-------------------------------|
 | DocumentReview               |                    |                               |
+|                              | InvalidArgument    | ID                            |
 |                              | Internal           | DOCUMENT                      |
 |                              | Internal           | CONTENT                       |
+|------------------------------|--------------------|-------------------------------|
+| DocumentSummary              |                    |                               |
 |                              | InvalidArgument    | ID                            |
+|                              | Internal           | DOCUMENT                      |
 |------------------------------|--------------------|-------------------------------|
 | PublisherAdd                 |                    |                               |
 |                              | Internal           | PUBLISHER                     |
@@ -136,6 +140,29 @@ Responses Map
 |                              | InvalidArgument    | EMAIL;EMPTY                   |
 |                              | InvalidArgument    | PASSWORD;EMPTY                |
 |                              | AlreadyExists      | AUTHOR                        |
+|------------------------------|--------------------|-------------------------------|
+| DocumentUpdate               |                    |                               |
+|                              | InvalidArgument    | ID;EMPTY                      |
+|                              | InvalidArgument    | HEADLINE;EMPTY                |
+|                              | InvalidArgument    | CONTENT;EMPTY                 |
+|                              | Internal           | DOCUMENT                      |
+|                              | Internal           | UPDATE                        |
+|                              | Internal           | MEMORY/CATALOG                |
+|                              | Internal           | MEMORY/DOCUMENT               |
+|------------------------------|--------------------|-------------------------------|
+| ParaphraseAdd                |                    |                               |
+|                              | InvalidArgument    | ID;EMPTY                      |
+|                              | InvalidArgument    | HEADLINE;EMPTY                |
+|                              | InvalidArgument    | CONTENT;EMPTY                 |
+|                              | Internal           | DOCUMENT                      |
+|                              | Internal           | PARAPHRASE                    |
+|                              | Internal           | MEMORY/CATALOG                |
+|                              | Internal           | MEMORY/DOCUMENT               |
+|------------------------------|--------------------|-------------------------------|
+| ExploreArticles              |                    |                               |
+|                              | InvalidArgument    | DATE;EMPTY                    |
+|                              | InvalidArgument    | DATE;EXCEED                   |
+|                              | Internal           | EXPLORE                       |
 |------------------------------|--------------------|-------------------------------|
 
 
