@@ -45,11 +45,16 @@ inward.ir
 /inward.ir/application    $ make run
 /inward.ir/web            $ make run
 /inward.ir/web-resources  $ run.sh
-/inward.ir/administration $ wails dev | VSCode:Ctrl+F9
+/inward.ir/administration $ wails dev | VSCode: Run Build Task (Ctrl+Shift+F9)
 
 --------------------------------------------------------------------------------
 
 ## Development Lifecycle
+
+
+### Apply "application" configurations:
+
+/inward.ir/constitution/bootstrap $ source etcd.sh
 
 
 ### Setup Database
@@ -67,6 +72,9 @@ OR
 
 /inward.ir/constitution $ make web_interface
 
+Build and push "web" project.
+Push "web-resources" project.
+
 
 ### Generate PASETO asymmetric keys for administration authentication token:
 
@@ -80,12 +88,7 @@ Save "Asymmetric Public Key" in "resource/authentication_key" file of "administr
 
 /inward.ir/constitution $ make generate_password phrase=<password>
 
-Use output to add a new "author"'s passowrd to database.
-
-
-### Apply "application" configurations:
-
-/inward.ir/constitution/bootstrap $ source etcd.sh
+Use output to add a new "author"'s password to database.
 
 
 ### Setup MinIO server:
@@ -102,3 +105,40 @@ Use output to add a new "author"'s passowrd to database.
 ### Create MinIO user:
 
 /inward.ir/constitution $ make minio_user name=<name> passwd=<password>
+
+--------------------------------------------------------------------------------
+
+## Administration Develop Workflow
+
+constitution:
+
+- Create database query at "database/queries/administration/"
+- Call `make sqlc`
+- Create RPC at "specifications/administration/administration.proto"
+- Call `make protoc`
+
+application:
+
+- Implement RPC at "services/administration/"
+- Add access privilage at "resource/administration_access.json"
+
+administration (backend):
+
+- Add menu at "main.go#setupMenu" function
+- Add Application menu item at "basic/menus/application.go"
+- Implement service at "application/services/"
+- "Run Task" by VSCode : "Generate Module"
+
+administration (frontend):
+
+- Create view at "views/ParaphraseReview.vue"
+- Add router at "src/router/"
+
+--------------------------------------------------------------------------------
+
+## Date and Time Epoch
+
+inward.ir/constitution/database/schema.sql#generate_document_alias
+inward.ir/application/infrastructure/datetime.go#CheckDateNotExceed
+inward.ir/administration/basic/core/core.go
+inward.ir/constitution/development/document_generator/main.go

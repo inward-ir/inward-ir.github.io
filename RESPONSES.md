@@ -12,6 +12,9 @@ Responses Map
 |                              | Internal        | ARTICLE                |
 |                              | Internal        | CONTENTS               |
 |------------------------------|-----------------|------------------------|
+| Document:Tags                |                 |                        |
+|                              | Internal        | TAGS                   |
+|------------------------------|-----------------|------------------------|
 | Explore:Catalog              |                 |                        |
 |                              | InvalidArgument | DATE;EMPTY             |
 |                              | InvalidArgument | DATE;EXCEED            |
@@ -56,6 +59,9 @@ Responses Map
 |                              | InvalidArgument | NAME;INVALID           |
 |                              | NotFound        | AUTHOR                 |
 |                              | Internal        | AUTHOR                 |
+|------------------------------|-----------------|------------------------|
+| Provision:Topics             |                 |                        |
+|                              | Internal        | TOPICS                 |
 |------------------------------|-----------------|------------------------|
 
 
@@ -106,15 +112,17 @@ Responses Map
 |                              | AlreadyExists      | DOCUMENT                      |
 |                              | FailedPrecondition | AUTHOR_ID                     |
 |                              | AlreadyExists      | EXTRACT                       |
-|                              | Internal           | MEMORY                        |
 |------------------------------|--------------------|-------------------------------|
-| SetDocumentState             |                    |                               |
+| DocumentState                |                    |                               |
 |                              | InvalidArgument    | ID;EMPTY                      |
 |                              | InvalidArgument    | STATE;UNSPECIFIED             |
 |                              | Internal           | STATE                         |
 |                              | Internal           | DOCUMENT                      |
+|                              | Internal           | PUBLISHER                     |
 |                              | Internal           | MEMORY/CATALOG                |
 |                              | Internal           | MEMORY/DOCUMENT               |
+|                              | Internal           | MEMORY/FEATURED               |
+|                              | Internal           | MEMORY/PUBLISHER              |
 |------------------------------|--------------------|-------------------------------|
 | DocumentReview               |                    |                               |
 |                              | InvalidArgument    | ID                            |
@@ -145,6 +153,7 @@ Responses Map
 |                              | InvalidArgument    | ID;EMPTY                      |
 |                              | InvalidArgument    | HEADLINE;EMPTY                |
 |                              | InvalidArgument    | CONTENT;EMPTY                 |
+|                              | FailedPrecondition | AUTHOR_ID                     |
 |                              | Internal           | DOCUMENT                      |
 |                              | Internal           | UPDATE                        |
 |                              | Internal           | MEMORY/CATALOG                |
@@ -154,15 +163,24 @@ Responses Map
 |                              | InvalidArgument    | ID;EMPTY                      |
 |                              | InvalidArgument    | HEADLINE;EMPTY                |
 |                              | InvalidArgument    | CONTENT;EMPTY                 |
+|                              | FailedPrecondition | AUTHOR_ID                     |
 |                              | Internal           | DOCUMENT                      |
 |                              | Internal           | PARAPHRASE                    |
-|                              | Internal           | MEMORY/CATALOG                |
 |                              | Internal           | MEMORY/DOCUMENT               |
 |------------------------------|--------------------|-------------------------------|
 | ExploreArticles              |                    |                               |
 |                              | InvalidArgument    | DATE;EMPTY                    |
 |                              | InvalidArgument    | DATE;EXCEED                   |
 |                              | Internal           | EXPLORE                       |
+|------------------------------|--------------------|-------------------------------|
+| ExploreInterpretedArticles   |                    |                               |
+|                              | Internal           | EXPLORE                       |
+|                              | FailedPrecondition | AUTHOR_ID                     |
+|------------------------------|--------------------|-------------------------------|
+| ExploreParaphrase            |                    |                               |
+|                              | InvalidArgument    | ID                            |
+|                              | Internal           | EXPLORE                       |
+|                              | FailedPrecondition | AUTHOR_ID                     |
 |------------------------------|--------------------|-------------------------------|
 
 
