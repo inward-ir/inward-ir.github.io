@@ -28,14 +28,18 @@ inward.ir
 
 --------------------------------------------------------------------------------
 
-## Gateways
+## Domain
 
-- application gRPC API     : app.inward.ir    -> **application**
-- application gRPC Web API : appweb.inward.ir -> **gRPC Web Proxy**
+- inward.ir -> **Web Server**
 
 ## Subdomains
 
 - Media : media.inward.ir -> 0.0.0.0:9000 (minio)
+
+## Gateways
+
+- application gRPC API     : app.inward.ir    -> **application**
+- application gRPC Web API : appweb.inward.ir -> **gRPC Web Proxy**
 
 --------------------------------------------------------------------------------
 
@@ -139,6 +143,7 @@ administration (frontend):
 ## Date and Time Epoch
 
 inward.ir/constitution/database/schema.sql#generate_document_alias
-inward.ir/application/infrastructure/datetime.go#CheckDateNotExceed
+inward.ir/application/infrastructure/temporal/datetime.go#CheckDateNotExceed
 inward.ir/administration/basic/core/core.go
 inward.ir/constitution/development/document_generator/main.go
+inward.ir/web-interface/resources/scripts/catalog.js#epoch1404
